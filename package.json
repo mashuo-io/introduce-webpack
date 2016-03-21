@@ -1,0 +1,22 @@
+{
+  "name": "introduce-webpack",
+  "version": "1.0.0",
+  "description": "码说之介绍webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mashuo-io/introduce-webpack.git"
+  },
+  "author": "Ron Liu <ronliu2k@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mashuo-io/introduce-webpack/issues"
+  },
+  "homepage": "https://github.com/mashuo-io/introduce-webpack#readme",
+  "dependencies": {
+    "jquery": "^2.2.2"
+  }
+}
