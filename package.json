@@ -17,6 +17,16 @@
   },
   "homepage": "https://github.com/mashuo-io/introduce-webpack#readme",
   "dependencies": {
+    "bootstrap-sass": "^3.3.6",
     "jquery": "^2.2.2"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.14"
   }
 }
