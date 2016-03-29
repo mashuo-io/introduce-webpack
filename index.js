@@ -1,6 +1,8 @@
-var $= require('jquery');
-require('./style.scss');
+//var $= require('jquery');
+//require('./style.scss');
+//	$('button').click(function(){alert('clicked1')});
 document.addEventListener('DOMContentLoaded', function() {
 	console.log('hi');
-	$('button').click(function(){alert('clicked1')});
 });
+
+class A {}

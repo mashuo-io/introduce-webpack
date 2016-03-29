@@ -17,6 +17,10 @@ module.exports = {
 			{
 				test: [/\.woff/, /\.woff2/],
 				loader: "url-loader?limit=100000&minetype=application/font-woff"
+			},
+			{
+				test : /\.js$/,
+				loader: 'babel-loader'
 			}
 		]
 	}
