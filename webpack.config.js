@@ -27,5 +27,8 @@ module.exports = {
 				loader: 'babel-loader'
 			}
 		]
+	},
+	externals: {
+		BMap: "BMap"
 	}
 };
