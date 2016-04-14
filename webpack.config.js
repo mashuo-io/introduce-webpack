@@ -2,6 +2,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: './index.js',
+	devtool: 'source-map',
 	output: {
 		path: __dirname,
 		filename: 'bundle.js'
@@ -11,7 +12,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+				loader: ExtractTextPlugin.extract('css-loader?sourceMap=true!sass-loader?sourceMap=true')
 			},
 			{
 				test: [/\.svg/, /\.eot/, /\.ttf/, /\.eot/],
