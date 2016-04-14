@@ -18,19 +18,19 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+				loader: ExtractTextPlugin.extract('css!sass')
 			},
 			{
 				test: [/\.svg/, /\.eot/, /\.ttf/, /\.eot/],
-				loader: 'file-loader'
+				loader: 'file'
 			},
 			{
 				test: [/\.woff/, /\.woff2/],
-				loader: "url-loader?limit=100000&minetype=application/font-woff"
+				loader: "url?limit=100000&minetype=application/font-woff"
 			},
 			{
 				test : /\.js$/,
-				loader: 'babel-loader'
+				loader: 'babel'
 			}
 		]
 	}
