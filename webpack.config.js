@@ -1,18 +1,24 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: './index.js',
-	devtool: 'source-map',
 	output: {
-		path: __dirname,
+		path: __dirname + '/dist',
 		filename: 'bundle.js'
 	},
-	plugins: [new ExtractTextPlugin('style.css')],
+	plugins: [
+		new ExtractTextPlugin('style.css'),
+		new webpack.optimize.DedupePlugin(),
+		new webpack.optimize.UglifyJsPlugin(),
+		new HtmlWebpackPlugin({template: './index.html', inject: false})
+	],
 	module: {
 		loaders: [
 			{
 				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract('css-loader?sourceMap=true!sass-loader?sourceMap=true')
+				loader: ExtractTextPlugin.extract('css-loader!sass-loader')
 			},
 			{
 				test: [/\.svg/, /\.eot/, /\.ttf/, /\.eot/],
