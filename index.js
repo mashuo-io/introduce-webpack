@@ -1,26 +1,37 @@
-//var $= require('jquery');
-//require('./style.scss');
-//	$('button').click(function(){alert('clicked1')});
-document.addEventListener('DOMContentLoaded', () => {
-	console.log('hi');
-	let b = new B();
-	b.do();
-	let {name} = b;
-	console.log('b\'s name is', name);
+console.log(2 ** 2);
 
-	let arr= [0,1,2,3,4];
-	console.log('arr is now', [...arr.slice(0,2), ...arr.slice(3)])
-});
+(async () => {
+	let a = await new Promise (resolve=> setTimeout(()=> resolve(1), 100));
+	console.log('stage-3', a);
+})();
+
+let obj = {a:1, b:1};
+let newObj = {...obj, c:1};
+console.log(newObj);
 
 class A {
-	constructor() {
-		console.log('constructing');
-	}
+	name ="ron";
 }
 
-class B extends A {
-	do() {
-		console.log('B is doing');
-	}
-	name= 'abc'
+let a = new A();
+console.log(a);
+
+@prefix
+class B {
+	@readonly
+	name='ron';
 }
+
+function prefix(c) {
+	c.prototype.do= ()=>{console.log('done')};
+}
+
+function readonly(target, property, descriptor) {
+	Object.defineProperty(target, property, Object.assign(descriptor, {writable: false}));
+}
+
+let b = new B();
+b.do();
+console.log(b);
+b.name = 'jack';
+console.log(b);
